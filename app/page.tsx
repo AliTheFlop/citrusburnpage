@@ -1,3 +1,5 @@
+"use client";
+
 export default function Page() {
   return (
     <main className="flex-1 w-full max-w-2xl mx-auto px-4 sm:px-6 py-12 md:py-20 text-citrus-blue">
@@ -91,6 +93,11 @@ export default function Page() {
       <section className="text-center mb-16 flex flex-col items-center">
         <a
           href="https://787924pa-0t1usg5uk2py81l-u.hop.clickbank.net"
+          onClick={() => {
+            if (typeof window !== 'undefined' && (window as any).fbq) {
+              (window as any).fbq('track', 'Subscribe');
+            }
+          }}
           className="inline-flex items-center justify-center gap-2 bg-citrus-orange hover:bg-[#e04f33] text-white text-xl md:text-2xl font-bold py-5 px-8 md:px-12 rounded-full shadow-[0_8px_20px_rgba(250,94,65,0.4)] hover:shadow-[0_12px_25px_rgba(250,94,65,0.5)] transition-all transform hover:-translate-y-1 w-full sm:w-auto"
         >
           See How CitrusBurn™ Works
