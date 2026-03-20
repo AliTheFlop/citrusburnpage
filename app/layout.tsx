@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -21,7 +22,9 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} antialiased h-full`}>
       <body className="min-h-full flex flex-col">
         {/* Meta Pixel Code Placeholder */}
-        <script
+        <Script
+          id="fb-pixel"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               !function(f,b,e,v,n,t,s)
@@ -42,7 +45,7 @@ export default function RootLayout({
             height="1"
             width="1"
             style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+            src="https://www.facebook.com/tr?id=956586206715919&ev=PageView&noscript=1"
             alt=""
           />
         </noscript>
